@@ -18,6 +18,8 @@ set_wireless() {
 
 start() {
 	echo "Starting network..."
+	fw_setenv wlandev rtl8188fu-ssc377
+	echo "Wi-Fi environment variable set."
 	ifup lo
 	if [ -n "$dev" ]; then
 		set_wireless
